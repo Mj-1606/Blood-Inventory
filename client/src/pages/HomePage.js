@@ -46,7 +46,7 @@ const HomePage = () => {
               style={{ cursor: "pointer" }}
             >
               <i className="fa-solid fa-plus text-success py-4"></i>
-              Add Inventory
+              Add New Record
             </h4>}
             {user?.role !== "donar" && <table className="table ">
               <thead>
@@ -74,6 +74,7 @@ const HomePage = () => {
             </table>
 }
 {user?.role === "donar" && navigate("/donation")}
+{user?.role === "admin" && navigate("/donar-list")}
             <Modal />
           </div>
         </>

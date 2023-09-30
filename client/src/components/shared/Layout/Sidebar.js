@@ -14,30 +14,30 @@ const Sidebar = () => {
     <div>
       <div className="sidebar">
         <div className="menu">
-          {user?.role === "organisation" && (
+          {(user?.role === "organisation" || user?.role === "hospital" ) && (
             <>
-              <div
+              {user?.role !== "organisation" &&<div
                 className={`menu-item ${location.pathname === "/" && "active"}`}
               >
                 <i className="fa-solid fa-warehouse"></i>
-                <Link to="/">Inventory</Link>
-              </div>
+                <Link to="/">All Records</Link>
+              </div>}
               <div
                 className={`menu-item ${
                   location.pathname === "/donar" && "active"
                 }`}
               >
                 <i className="fa-solid fa-hand-holding-medical"></i>
-                <Link to="/donar">Donar</Link>
+                <Link to="/donar">Donor Details</Link>
               </div>
-              <div
+              {/* <div
                 className={`menu-item ${
                   location.pathname === "/hospital" && "active"
                 }`}
               >
                 <i className="fa-solid fa-hospital"></i>
                 <Link to="/hospital">Hospital</Link>
-              </div>
+              </div> */}
             </>
           )}
           {user?.role === "admin" && (
@@ -85,7 +85,7 @@ const Sidebar = () => {
               }`}
             >
               <i className="fa-sharp fa-solid fa-building-ngo"></i>
-              <Link to="/consumer">Consumer</Link>
+              <Link to="/consumer">Consumer Details</Link>
             </div>
           )}
           {user?.role === "donar" && (

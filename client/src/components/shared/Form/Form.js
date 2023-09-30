@@ -56,19 +56,6 @@ const Form = ({ formType, submitBtn, formTitle }) => {
               type="radio"
               className="form-check-input"
               name="role"
-              id="adminRadio"
-              value={"admin"}
-              onChange={(e) => setRole(e.target.value)}
-            />
-            <label htmlFor="adminRadio" className="form-check-label">
-              Admin
-            </label>
-          </div>
-          <div className="form-check ms-2">
-            <input
-              type="radio"
-              className="form-check-input"
-              name="role"
               id="hospitalRadio"
               value={"hospital"}
               onChange={(e) => setRole(e.target.value)}
@@ -88,6 +75,19 @@ const Form = ({ formType, submitBtn, formTitle }) => {
             />
             <label htmlFor="organisationRadio" className="form-check-label">
               Organisation
+            </label>
+          </div>
+          <div className="form-check ms-2">
+            <input
+              type="radio"
+              className="form-check-input"
+              name="role"
+              id="adminRadio"
+              value={"admin"}
+              onChange={(e) => setRole(e.target.value)}
+            />
+            <label htmlFor="adminRadio" className="form-check-label">
+              Admin
             </label>
           </div>
         </div>
