@@ -36,9 +36,10 @@ const Donation = () => {
           <thead>
             <tr>
               <th scope="col">Blood Group</th>
-              <th scope="col">Inventory TYpe</th>
+              <th scope="col">Inventory Type</th>
               <th scope="col">Quantity</th>
               <th scope="col">Email</th>
+              <th scope="col">Organisation / Hospital</th>
               <th scope="col">Date</th>
             </tr>
           </thead>
@@ -49,6 +50,7 @@ const Donation = () => {
                 <td>{record.inventoryType}</td>
                 <td>{record.quantity}</td>
                 <td>{record.email}</td>
+                <td>{record?.organisation?.organisationName}{record?.organisation?.hospitalName}</td>
                 <td>{moment(record.createdAt).format("DD/MM/YYYY hh:mm A")}</td>
               </tr>
             ))}

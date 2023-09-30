@@ -7,6 +7,7 @@ import Modal from "../components/shared/modal/Modal";
 import API from "../services/API";
 import moment from "moment";
 
+
 const HomePage = () => {
   const { loading, error, user } = useSelector((state) => state.auth);
   const [data, setData] = useState([]);
@@ -38,7 +39,7 @@ const HomePage = () => {
       ) : (
         <>
           <div className="container">
-            {  <h4
+            {user?.role !== "donar" &&  <h4
               className="ms-4"
               data-bs-toggle="modal"
               data-bs-target="#staticBackdrop"
@@ -47,7 +48,7 @@ const HomePage = () => {
               <i className="fa-solid fa-plus text-success py-4"></i>
               Add Inventory
             </h4>}
-            <table className="table ">
+            {user?.role !== "donar" && <table className="table ">
               <thead>
                 <tr>
                   <th scope="col">Blood Group</th>
@@ -71,7 +72,8 @@ const HomePage = () => {
                 ))}
               </tbody>
             </table>
-
+}
+{user?.role === "donar" && navigate("/donation")}
             <Modal />
           </div>
         </>

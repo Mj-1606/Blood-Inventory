@@ -42,14 +42,14 @@ const loginController = async (req, res) => {
     if (!user) {
       return res.status(404).send({
         success: false,
-        message: "Invalid Credentials",
+        message: "User not found",
       });
     }
     //check role
     if (user.role !== req.body.role) {
       return res.status(500).send({
         success: false,
-        message: "role dosent match",
+        message: "Role dosen't match",
       });
     }
     //compare password
@@ -60,7 +60,7 @@ const loginController = async (req, res) => {
     if (!comparePassword) {
       return res.status(500).send({
         success: false,
-        message: "Invalid Credentials",
+        message: "Password is Incorrect",
       });
     }
     const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {

@@ -1,6 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import API from "../../../services/API";
-import { toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const userLogin = createAsyncThunk(
   "auth/login",
@@ -9,13 +10,15 @@ export const userLogin = createAsyncThunk(
       const { data } = await API.post("/auth/login", { role, email, password });
       //store token
       if (data.success) {
-        alert(data.message);
+        // alert(data.message);
+        toast.success(data.message);
         localStorage.setItem("token", data.token);
         window.location.replace("/");
       }
       return data;
     } catch (error) {
       if (error.response && error.response.data.message) {
+        // toast.error("user does not exist with this email");
         return rejectWithValue(error.response.data.message);
       } else {
         return rejectWithValue(error.message);
@@ -54,9 +57,9 @@ export const userRegister = createAsyncThunk(
         website,
       });
       if (data?.success) {
-        alert("User Registerd Successfully");
+        // alert("User Registerd Successfully");
+        toast.success("User Registerd Successfully");
         window.location.replace("/login");
-        // toast.success("User Registerd Successfully");
       }
     } catch (error) {
       console.log(error);

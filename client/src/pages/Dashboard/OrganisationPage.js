@@ -31,6 +31,7 @@ const OrganisationPage = () => {
       console.log(error);
     }
   };
+  console.log(data);
 
   useEffect(() => {
     getOrg();
@@ -41,7 +42,7 @@ const OrganisationPage = () => {
       <table className="table ">
         <thead>
           <tr>
-            <th scope="col">Name</th>
+            <th scope="col">Organisation / Hospital</th>
             <th scope="col">Email</th>
             <th scope="col">Phone</th>
             <th scope="col">Address</th>
@@ -51,7 +52,7 @@ const OrganisationPage = () => {
         <tbody>
           {data?.map((record) => (
             <tr key={record._id}>
-              <td>{record.organisationName}</td>
+              <td>{record?.organisationName}{record.hospitalName}</td>
               <td>{record.email}</td>
               <td>{record.phone}</td>
               <td>{record.address}</td>
