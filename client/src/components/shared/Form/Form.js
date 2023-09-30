@@ -105,6 +105,7 @@ const Form = ({ formType, submitBtn, formTitle }) => {
                     name={"email"}
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
+                    isRequired={true}
                   />
                   <InputType
                     labelText={"Password"}
@@ -113,6 +114,7 @@ const Form = ({ formType, submitBtn, formTitle }) => {
                     name={"password"}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
+                    isRequired={true}
                   />
                 </>
               );
@@ -128,6 +130,7 @@ const Form = ({ formType, submitBtn, formTitle }) => {
                       name={"name"}
                       value={name}
                       onChange={(e) => setName(e.target.value)}
+                      isRequired={true}
                     />
                   )}
                   {role === "organisation" && (
@@ -138,6 +141,7 @@ const Form = ({ formType, submitBtn, formTitle }) => {
                       name={"organisationName"}
                       value={organisationName}
                       onChange={(e) => setOrganisationName(e.target.value)}
+                      isRequired={true}
                     />
                   )}
                   {role === "hospital" && (
@@ -148,6 +152,7 @@ const Form = ({ formType, submitBtn, formTitle }) => {
                       name={"hospitalName"}
                       value={hospitalName}
                       onChange={(e) => setHospitalName(e.target.value)}
+                      isRequired={true}
                     />
                   )}
 
@@ -158,6 +163,7 @@ const Form = ({ formType, submitBtn, formTitle }) => {
                     name={"email"}
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
+                    isRequired={true}
                   />
                   <InputType
                     labelText={"Password"}
@@ -166,6 +172,7 @@ const Form = ({ formType, submitBtn, formTitle }) => {
                     name={"password"}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
+                    isRequired={true}
                   />
                   <InputType
                     labelText={"website"}
@@ -182,6 +189,7 @@ const Form = ({ formType, submitBtn, formTitle }) => {
                     name={"address"}
                     value={address}
                     onChange={(e) => setAddress(e.target.value)}
+                    isRequired={true}
                   />
                   <InputType
                     labelText={"Phone"}
@@ -190,6 +198,7 @@ const Form = ({ formType, submitBtn, formTitle }) => {
                     name={"phone"}
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
+                    isRequired={true}
                   />
                 </>
               );
@@ -205,7 +214,7 @@ const Form = ({ formType, submitBtn, formTitle }) => {
             </p>
           ) : (
             <p>
-              ALready Usser Please
+              Already User Please
               <Link to="/login"> Login !</Link>
             </p>
           )}

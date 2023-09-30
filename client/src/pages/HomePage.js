@@ -11,6 +11,7 @@ const HomePage = () => {
   const { loading, error, user } = useSelector((state) => state.auth);
   const [data, setData] = useState([]);
   const navigate = useNavigate();
+  console.log(data);
 
   //get function
   const getBloodRecords = async () => {
@@ -37,7 +38,7 @@ const HomePage = () => {
       ) : (
         <>
           <div className="container">
-            <h4
+            {  <h4
               className="ms-4"
               data-bs-toggle="modal"
               data-bs-target="#staticBackdrop"
@@ -45,15 +46,15 @@ const HomePage = () => {
             >
               <i className="fa-solid fa-plus text-success py-4"></i>
               Add Inventory
-            </h4>
+            </h4>}
             <table className="table ">
               <thead>
                 <tr>
                   <th scope="col">Blood Group</th>
                   <th scope="col">Inventory Type</th>
                   <th scope="col">Quantity</th>
-                  <th scope="col">Donar Email</th>
-                  <th scope="col">TIme & Date</th>
+                  <th scope="col">Donor Email</th>
+                  <th scope="col">Time & Date</th>
                 </tr>
               </thead>
               <tbody>
